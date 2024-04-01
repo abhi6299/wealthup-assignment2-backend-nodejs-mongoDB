@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"> 
+    <title>Code Validation</title>
+</head>
+<body>
+    <h2 style="text-align: center; margin-bottom: 3%;"> Entered Code was correct. Below are the details </h1>
+    <h3 style="text-align: center;">Incorrect passwords:</h3>
+    <div id="parent"><% incorrect.forEach(p=>{ %>
+        <span id="child"><%= p %></span>
+    <% }) %>
+    </div>
+    <hr/>
+    <h3 style="text-align: center;margin-bottom: 3%;">Correct passwords: </h3>
+    <div id="parent"><% correct.forEach(p=>{ %>
+        <span id="child"><%= p %></span>
+    <% }) %>
+    </div>
+</body>
+</html>

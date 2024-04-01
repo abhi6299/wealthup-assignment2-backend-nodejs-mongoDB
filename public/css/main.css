@@ -1,0 +1,28 @@
+/* Home Page CSS */
+#codeDisplay{
+    text-align: center;
+}
+#refreshBtn{
+    margin-right:6%;
+}
+
+/* Details Page CSS */
+
+#parent{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+
+#child{
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    border:1px solid red;
+    padding:0.5rem;
+}
+
+#message{
+    padding:2rem;
+    font-size:1.2rem;
+    font-family: monospace;
+}
