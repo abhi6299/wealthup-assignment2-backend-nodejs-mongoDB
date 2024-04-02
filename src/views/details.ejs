@@ -8,16 +8,42 @@
 </head>
 <body>
     <h2 style="text-align: center; margin-bottom: 3%;"> Entered Code was correct. Below are the details </h1>
+    <hr/>
     <h3 style="text-align: center;">Incorrect passwords:</h3>
     <div id="parent"><% incorrect.forEach(p=>{ %>
-        <span id="child"><%= p %></span>
+        <span id="child-incorrect"><%= p %></span>
     <% }) %>
     </div>
     <hr/>
     <h3 style="text-align: center;margin-bottom: 3%;">Correct passwords: </h3>
     <div id="parent"><% correct.forEach(p=>{ %>
-        <span id="child"><%= p %></span>
+        <span id="child-correct"><%= p %></span>
     <% }) %>
     </div>
+    <hr/>
+    <div id="HomePage"><button onclick="refreshCode()">Go to HomePage</button></div>
+
+    <script>
+        function refreshAndNavigate() {
+            // Redirect to a specific API path
+            window.location.href = '/api/codes';
+            console.log('Navigating to /api/codes...');
+            // Reload the current page after a short delay (e.g., 2 seconds)
+            // setTimeout(() => {
+            //     window.location.reload();
+            // }, 2000);
+        }
+        async function refreshCode() {
+        try {
+            console.log("Reloading .........");
+            window.location.href = '/api/codes';
+        } catch (error) {
+            console.error('Error refreshing code:', error);
+            // Display an error message to the user
+            alert('Failed to refresh code. Please try again later.');
+        }   
+    }
+    </script>
+
 </body>
 </html>

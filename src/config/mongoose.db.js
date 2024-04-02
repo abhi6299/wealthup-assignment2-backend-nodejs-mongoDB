@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const url = process.env.DB_URL+"wealthup";
+const url = process.env.DB_URL;
 console.log(url);
 export const connectUsingMongoose = async () =>{
     try{

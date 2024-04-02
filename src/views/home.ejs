@@ -8,15 +8,17 @@
 </head>
 <body>
     <div id="codeDisplay">
-    <form action='/api/codes/update' method="post">
         <h1>Code Validation App</h1>
         <hr/>
-        <input name="codeFetched" id="codeFetched" value=<%=code%> />
-        <button id="refreshBtn" onclick="refreshCode()" >Refresh Code</button>
-        <input type="text" name="code" id="code" placeholder="Enter code">
-        <button id="submitBtn" >Submit</button>
-    </form>
-    <div id="message"><%= message %></div>
+        <div id="fetchedCode"><input name="codeFetched" id="codeFetched" value=<%=code%> />
+        <button id="refreshBtn" onclick="refreshCode()" >Refresh</button></div>
+        <br/><br/>
+        <form action="/api/codes/update/<%= code %>" method="post">
+            <input type="text" name="code" id="code" placeholder="Enter code">
+            <button id="submitBtn" >Submit</button>
+        </form>
+        
+        <div id="message"><%= message %></div>
     </div>
     <% if(bool){ %>
         <script>
@@ -38,16 +40,16 @@
         }
         async function refreshCode() {
         try {
-            const response = await fetch('/api/codes', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to refresh code');
-            }
+                // const response = await fetch('/api/codes', {
+                //     method: 'GET',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //     },
+                // });
+                
+                // if (!response.ok) {
+                //     throw new Error('Failed to refresh code');
+                // }
             console.log("Reloading .........");
             window.location.href = '/api/codes';
             // Reload the page after successful response

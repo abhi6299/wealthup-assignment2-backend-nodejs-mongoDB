@@ -29,9 +29,10 @@ export class codesController{
 
     async postCodes(req, res, next){
         try {
-            const { code, codeFetched } = req.body;
+            const codeFetched = req.params.id;
+            const { code } = req.body;
             const existingCode = await codesModel.findOne({ value: code });
-            // console.log(code + "---" +codeFetched);
+            console.log(code + "---" +codeFetched);
             if (!existingCode) {
                 // return res.status(400).json({ message: 'Enter a valid code' });
                 if(code.length!=0){
