@@ -27,7 +27,7 @@ server.set('views',path.join(path.resolve(),'src','views'));
 
 const codesControl = new codesController();
 server.get('/api/codes',codesControl.getCodes);
-server.post('/api/codes/update/:id',codesControl.postCodes);
+server.post('/api/codes/:id',codesControl.postCodes);
 server.get('/api/codes/use',codesControl.nextPage);
 
 server.listen(4000,()=>{

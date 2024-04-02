@@ -13,7 +13,7 @@
         <div id="fetchedCode"><input name="codeFetched" id="codeFetched" value=<%=code%> />
         <button id="refreshBtn" onclick="refreshCode()" >Refresh</button></div>
         <br/><br/>
-        <form action="/api/codes/update/<%= code %>" method="post">
+        <form action="/api/codes/<%= code %>" method="post">
             <input type="text" name="code" id="code" placeholder="Enter code">
             <button id="submitBtn" >Submit</button>
         </form>
